@@ -1,0 +1,35 @@
+#include<stdio.h>
+
+void nhapMang(int a[],int &n){
+	do{
+		printf("Nhap  0<n<=100 :");
+		scanf("%d",&n);
+	}while(n<=0 || n>100);
+	
+	for(int i=0;i<n;i++){
+		printf("a[%d]",i);
+		scanf("%d",&a[i]);
+	}
+}
+
+void xuatMang(int a[],int n){
+	printf("Cac gia tri da nhap :");
+	for(int i=0;i<n;i++){
+		printf("%4d",a[i]);
+	}
+}
+
+int demSoDuong(int a[],int n){
+	if(n==0)
+		return 0;
+	if(a[n-1]>0)
+		return 1+demSoDuong(a,n-1);
+		return demSoDuong(a,n-1);
+}
+
+int main(){
+	int a[100],n;
+	nhapMang(a,n);
+	xuatMang(a,n);
+	printf("\nSo duong trong mang la = %d",demSoDuong(a,n));
+}
