@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+
+int giaiThua(int n){
+	if(n==0)
+		return 1;
+	return n*giaiThua(n-1);
+}
+
+float S(float x,int n){
+	if(n==1)
+		return x;
+	return pow(x,(float)n/giaiThua(n))+S(x,n-1);
+	
+}
+
+int main(){
+	int n;
+	float x;
+	printf("nhap n");
+	scanf("%d",&n);
+	printf("\nnhap x");
+	scanf("%f",&x);
+	printf("ket qua = %.2f",S(x,n));
+}
