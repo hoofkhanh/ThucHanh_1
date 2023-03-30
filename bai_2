@@ -10,7 +10,7 @@ int giaiThua(int n){
 float S(float x,int n){
 	if(n==1)
 		return x;
-	return pow(x,(float)n/giaiThua(n))+S(x,n-1);
+	return pow(x,n)/giaiThua(n)+S(x,n-1);
 	
 }
 
